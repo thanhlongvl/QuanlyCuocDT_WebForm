@@ -1,0 +1,58 @@
+﻿@model QuanLyCuoc2.Models.ChiTietSuDung
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ChiTietSuDung</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ThongTinSIM.SoDienThoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThongTinSIM.SoDienThoai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TGBD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TGBD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TGKT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TGKT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoPhutSD7h23h)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoPhutSD7h23h)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoPhutSD23h7h)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoPhutSD23h7h)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,142 @@
+﻿@model IEnumerable<QuanLyCuoc2.Models.HoaDonTinhCuoc>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>THÔNG TIN KHÁCH HÀNG</h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="javascript:void(0);">Action</a></li>
+                            <li><a href="javascript:void(0);">Another action</a></li>
+                            <li><a href="javascript:void(0);">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="body">
+                <div class="row clearfix js-sweetalert">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <p>Tên Khách hàng:</p>
+                        <p>Đặng Thanh Long</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <p>A title with a text under</p>
+                        <button class="btn btn-primary waves-effect" data-type="with-title">CLICK ME</button>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <p>A success message!</p>
+                        <button class="btn btn-primary waves-effect" data-type="success">CLICK ME</button>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <p>A warning message, with a function attached to the <b>Confirm</b> button...</p>
+                        <button class="btn btn-primary waves-effect" data-type="confirm">CLICK ME</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    DANH SÁCH HÓA ĐƠN TÍNH CƯỚC
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="javascript:void(0);">Action</a></li>
+                            <li><a href="javascript:void(0);">Another action</a></li>
+                            <li><a href="javascript:void(0);">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                        <thead>
+                            <tr>
+                                <th>Mã hóa đơn</th>
+                                <th>Từ ngày</th>
+                                <th>Đến ngày</th>
+                                <th>Tiền thuê bao</th>
+                                <th>Tổng tiền</th>
+                                <th>Ngày xuất</th>
+                                <th>Tình trạng</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Mã HD</th>
+                                <th>Từ ngày</th>
+                                <th>Đến ngày</th>
+                                <th>Tiền thuê bao</th>
+                                <th>Tổng tiền</th>
+                                <th>Ngày xuất</th>
+                                <th>Tình trạng</th>
+                                <th></th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MaHDTC)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TuNgay)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DenNgay)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PhiHangThang)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TongTien)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NgayXuat)
+                                    </td>
+                                    <td style="text-align: center;">
+                                        @{
+                                            if (item.Flag == true)
+                                            {
+                                                <p class="font-bold col-cyan">Đã thanh toán</p>
+                                            }
+                                            else
+                                            {
+                                                <span class="font-bold col-orange">Chưa thanh toán</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("XEM", "Index", "ChiTietSuDungs", new { id = item.IDSIM, date = item.TuNgay.Value.Month }, new { @class = "btn bg-red waves-effect" })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
