@@ -26,20 +26,36 @@
             <div class="body">
                 <div class="row clearfix js-sweetalert">
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <p>Tên Khách hàng:</p>
-                        <p>Đặng Thanh Long</p>
+                        <h5>Tên Khách hàng:</h5>
+                        <p>@Html.DisplayFor(Model => Model.First().ThongTinSIM.KhachHang.TenKH)</p>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <p>A title with a text under</p>
-                        <button class="btn btn-primary waves-effect" data-type="with-title">CLICK ME</button>
+                        <h5>Thuê bao:</h5>
+                        <p>@Html.DisplayFor(Model => Model.First().ThongTinSIM.SoDienThoai)</p>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <p>A success message!</p>
-                        <button class="btn btn-primary waves-effect" data-type="success">CLICK ME</button>
+                        <h5>CMND:</h5>
+                        <p>@Html.DisplayFor(Model => Model.First().ThongTinSIM.KhachHang.CMND)</p>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <p>A warning message, with a function attached to the <b>Confirm</b> button...</p>
-                        <button class="btn btn-primary waves-effect" data-type="confirm">CLICK ME</button>
+                        <h5>Email:</h5>
+                        <p>@Html.DisplayFor(Model => Model.First().ThongTinSIM.KhachHang.Email)</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <h5>Nghề nghiệp:</h5>
+                        <p>@Html.DisplayFor(Model => Model.First().ThongTinSIM.KhachHang.NgheNghiep)</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <h5>Chức vụ:</h5>
+                        <p>@Html.DisplayFor(Model => Model.First().ThongTinSIM.KhachHang.ChucVu)</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <h5>Ngày đăng ký:</h5>
+                        <p>@Html.DisplayFor(Model => Model.First().ThongTinSIM.KhachHang.NgayDangKy)</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <h5>Địa chỉ:</h5>
+                        <p>@Html.DisplayFor(Model => Model.First().ThongTinSIM.KhachHang.DiaChi)</p>
                     </div>
                 </div>
             </div>
